@@ -10,12 +10,14 @@ if ($format == 1) {
     $zip->buildFromDirectory("./files/");
     $zip->compress(\Phar::GZ);
     echo "done $tarfile.gz";
+    
 } elseif ($format == 2) {
     $tarfile = "./data/$filename.tar";
     $zip = new \PharData($tarfile);
     $zip->buildFromDirectory("./files/");
     $zip->compress(\Phar::BZ2);
     echo "done $tarfile.bz2";
+    
 } else {
     echo "input the correct format!";
 }
